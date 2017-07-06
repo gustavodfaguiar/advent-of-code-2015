@@ -1,56 +1,23 @@
-import unittest
-
 class Floor:
-	def __init__(self):
-		self.position = 0
-
-
-	def floor_position(self, value):
+    @staticmethod
+	def calc_position(self, value):
+		time_up = 0
+		time_down = 0
 		count = 0
 		while count < len(value):
-			
 			if value[count] == '(':
-				self.position += 1
+				time_up += 1
 			elif value[count] == ')':
-				self.position -= 1
+				time_down += 1
 
 			count += 1
 
-		return self.position
+		return time_up - time_down
 
+	def floor_position(self, floors):
+		value = floors
+		return self.calc_position(self, value)
 
-
-class FloorTest(unittest.TestCase):
-	def setUp(self):
-		self.floor = Floor()
-
-	def test_up_floor(self):
-		self.assertEqual(self.floor.floor_position('('), 1)
-
-	def test_up_floor_2(self):
-		self.assertEqual(self.floor.floor_position('(('), 2)
-
-	def test_up_floor_4(self):
-		self.assertEqual(self.floor.floor_position('(((('), 4)
-
-	def test_down_floor(self):
-		self.assertEqual(self.floor.floor_position(')'), -1)
-
-	def test_down_floor_2(self):
-		self.assertEqual(self.floor.floor_position('))'), -2)
-
-	def test_down_floor_4(self):
-		self.assertEqual(self.floor.floor_position('))))'), -4)
-
-	def test_up_down_floor(self):
-		self.assertEqual(self.floor.floor_position('()'), 0)
-
-	def test_up_down_floor_2(self):
-		self.assertEqual(self.floor.floor_position('))((((('), 3)
-
-	def test_up_down_floor_3(self):
-		self.assertEqual(self.floor.floor_position(')())())'), -3)
-
-
-if __name__ == '__main__':
-	unittest.main()
+    def floor_position_input(self, floors):
+	   value = open(floors).read()
+	   return self.calc_position(self, value)

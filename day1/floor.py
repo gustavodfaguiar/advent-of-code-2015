@@ -1,6 +1,6 @@
 class Floor:
     @staticmethod
-    def calc_position(self, value):
+    def calc_position(value):
         time_up = 0
         time_down = 0
         count = 0
@@ -10,14 +10,14 @@ class Floor:
             elif value[count] == ')':
                 time_down += 1
 
-        count += 1
+            count += 1
 
         return time_up - time_down
 
     def floor_position(self, floors):
         value = floors
-        return self.calc_position(self, value)
+        return self.calc_position(value)
 
     def floor_position_input(self, floors):
         value = open(floors).read()
-        return self.calc_position(self, value)
+        return self.calc_position(value)

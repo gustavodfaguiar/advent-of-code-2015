@@ -1,5 +1,5 @@
 class Floor:
-    @staticmethod
+	@staticmethod
 	def calc_position(self, value):
 		time_up = 0
 		time_down = 0
@@ -18,6 +18,6 @@ class Floor:
 		value = floors
 		return self.calc_position(self, value)
 
-    def floor_position_input(self, floors):
-	   value = open(floors).read()
-	   return self.calc_position(self, value)
+	def floor_position_input(self, floors):
+		value = open(floors).read()
+		return self.calc_position(self, value)

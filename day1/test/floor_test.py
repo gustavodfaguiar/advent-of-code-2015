@@ -1,5 +1,5 @@
 import unittest
-from floor import Floor
+from day1.floor import Floor
 
 
 class FloorTest(unittest.TestCase):

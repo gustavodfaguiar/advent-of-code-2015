@@ -5,9 +5,6 @@ class Floor:
         down = value.count(')')
         return up - down
 
-    def floor_position(self, floors):
-        return self.calc_position(floors)
-
     def floor_position_input(self, floors):
         value = open(floors).read()
         return self.calc_position(value)

@@ -13,8 +13,9 @@ class FloorTest(unittest.TestCase):
         self.assertEqual(Floor().calc_position(')())())'), -3)
 
     def test_up_down_floor_input(self):
-        self.assertEqual(Floor().floor_position_input(
-            'test/fixtures/input.txt'), 138)
+        self.assertEqual(
+            Floor().floor_position_input('test/fixtures/input.txt'), 138
+        )
 
 
 if __name__ == '__main__':

@@ -4,18 +4,13 @@ from day1.floor import Floor
 
 class FloorTest(unittest.TestCase):
     def test_up_floor(self):
-        self.assertEqual(Floor().calc_position('('), 1)
+        self.assertEqual(Floor('(').santa_current_floor(), 1)
 
     def test_down_floor(self):
-        self.assertEqual(Floor().calc_position(')'), -1)
+        self.assertEqual(Floor(')').santa_current_floor(), -1)
 
     def test_up_down_floor(self):
-        self.assertEqual(Floor().calc_position(')())())'), -3)
-
-    def test_up_down_floor_input(self):
-        self.assertEqual(
-            Floor().floor_position_input('test/fixtures/input.txt'), 138
-        )
+        self.assertEqual(Floor(')())())').santa_current_floor(), -3)
 
 
 if __name__ == '__main__':

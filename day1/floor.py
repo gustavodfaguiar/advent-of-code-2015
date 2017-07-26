@@ -1,10 +1,11 @@
 class Floor:
-    @staticmethod
-    def calc_position(value):
-        up = value.count('(')
-        down = value.count(')')
-        return up - down
+    MOVE_UP = '('
+    MOVE_DOWN = ')'
 
-    def floor_position_input(self, floors):
-        value = open(floors).read()
-        return self.calc_position(value)
+    def __init__(self, input):
+        self.input = input
+
+    def santa_current_floor(self):
+        moves_up = self.input.count(self.MOVE_UP)
+        moves_down = self.input.count(self.MOVE_DOWN)
+        return int(moves_up - moves_down)

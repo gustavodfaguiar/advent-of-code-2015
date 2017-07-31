@@ -4,7 +4,8 @@ class Floor:
 
     def __init__(self, input):
         self.input = input
-
+    
+    @property
     def santa_current_floor(self):
         moves_up = self.input.count(self.MOVE_UP)
         moves_down = self.input.count(self.MOVE_DOWN)

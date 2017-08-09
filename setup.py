@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 
-setup(name='day1',
+setup(name='advent_of_code',
       version='0.1',
-      description='',
-      packages=['day1'])
+      description='Advent of code',
+      packages=['day1', 'day2'])

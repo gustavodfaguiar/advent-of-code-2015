@@ -15,11 +15,11 @@ class Santa:
     @property
     def first_enter_basement(self):
         floor = 0
-        for (index, move) in self.input:
+        for index, move in enumerate(self.input):
             if move == self.MOVE_UP:
                 floor += 1
             else:
                 floor -= 1
 
-            if floor == BASEMENT:
+            if floor == self.BASEMENT:
                 return index + 1

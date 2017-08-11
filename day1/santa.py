@@ -1,11 +1,10 @@
-class Floor:
+class Santa:
     MOVE_UP = '('
     MOVE_DOWN = ')'
     BASEMENT = -1
 
-    def __init__(self, input, basement):
+    def __init__(self, input):
         self.input = input
-        self.basement = basement
 
     @property
     def current_floor(self):

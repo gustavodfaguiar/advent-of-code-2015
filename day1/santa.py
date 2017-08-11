@@ -23,10 +23,3 @@ class Santa:
 
             if floor == BASEMENT:
                 return index + 1
-
-    @property
-    def santa_current_floor(self):
-        if self.basement == 0:
-            return self.current_floor
-        else:
-            return self.first_enter_basement

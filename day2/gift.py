@@ -2,16 +2,14 @@ class Gift:
     def calculation_of_wrapping_paper(self, dimensions):
         result = 0
         dimensions_new = []
-        for dimension in dimensions:
+        for dimension in list(dimensions):
             dimension = dimension.strip()
             dimensions_new.append(dimension)
 
-        for value in dimensions_new:
-            values_split = list(map(int, value.split('x')))
-            small_value = min(values_split)
-            result = result + (
-                ((2 * values_split[0]) +
-                 (2 * values_split[1]) +
-                 (2 * values_split[2])) + small_value)
-
+        for dimension in dimensions_new:
+            length, width, height = list(map(int, dimension.split('x')))
+            result += (
+                ((2 * length * width) +
+                 (2 * width * height) +
+                 (2 * height * length)))
         return result

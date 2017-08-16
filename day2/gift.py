@@ -1,5 +1,5 @@
 class Gift:
-    def calc(self, dimensions):
+    def calculation_of_wrapping_paper(self, dimensions):
         result = 0
         for value in dimensions:
             values_split = list(map(int, value.split('x')))

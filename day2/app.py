@@ -1,7 +1,7 @@
-from day2.present import Present
+from day2.gift import Gift
 
 
-input = open("input.txt").readlines()
+dimensions = open("input.txt").readlines()
 dimensions = []
 
 for dimension in input:
@@ -9,4 +9,4 @@ for dimension in input:
     dimensions.append(dimension)
 
 print('How many total square feet of wrapping paper should they order?')
-print(Present().calc(dimensions))
+print(Gift().calculation_of_wrapping_paper(dimensions))

@@ -1,4 +1,4 @@
-class Present:
+class Gift:
     def calc(self, dimensions):
         result = 0
         for value in dimensions:

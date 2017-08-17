@@ -10,9 +10,9 @@ class Test_gift(TestCase):
         self.assertEqual(
             self.gift.calculation_of_wrapping_paper(['2x3x4']), 58)
 
-    #def test_two_gift(self):
-    #    self.assertEqual(
-    #        self.gift.calculation_of_wrapping_paper(['2x3x4', '1x1x10']), 101)
+    def test_two_gift(self):
+        self.assertEqual(
+            self.gift.calculation_of_wrapping_paper(['2x3x4', '1x1x10']), 101)
 
 if __name__ == '__main__':
     main()

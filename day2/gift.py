@@ -1,10 +1,7 @@
 class Gift:
     def calculation_of_wrapping_paper(self, dimensions):
         total = 0
-        dimensions_new = []
-        for dimension in list(dimensions):
-            dimension = dimension.strip()
-            dimensions_new.append(dimension)
+        dimensions_new = [ value.strip() for value in dimensions ]
 
         for dimension in dimensions_new:
             result = []

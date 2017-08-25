@@ -18,5 +18,10 @@ class Test_gift(TestCase):
         self.assertEqual(
             self.gift.calculation_of_wrapping_paper(['2x3x4\n']), 58)
 
+    def test_value_feet_ribbon(self):
+        self.assertEqual(
+            self.gift.calculation_of_feet_ribbon(['2x3x4']), 34)
+
+
 if __name__ == '__main__':
     main()

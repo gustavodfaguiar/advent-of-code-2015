@@ -1,7 +1,9 @@
 class Gift:
+    def __init__(self):
+        self.total = 0
+
     def calculation_of_wrapping_paper(self, dimensions):
-        total = 0
-        dimensions_new = [ value.strip() for value in dimensions ]
+        dimensions_new = remove_spaces_white(dimensions)
 
         for dimension in dimensions_new:
             result = []
@@ -14,13 +16,12 @@ class Gift:
 
             mult_result = lambda result: [value * 2 for value in result]
             result = mult_result(result)
-            total += sum(result) + result_min
+            self.total += sum(result) + result_min
 
-        return total
+        return self.total
 
     def calculation_of_feet_ribbon(self, dimensions):
-        total = 0
-        dimensions_new = [ value.strip() for value in dimensions ]
+        dimensions_new = remove_spaces_white(dimensions)
 
         for dimension in dimensions_new:
             result = []
@@ -33,7 +34,9 @@ class Gift:
 
             result_sum = result_sort[0] * 2 + result_sort[1] * 2
             result_mul = result[0] * result[1] * result[2]
-            total += result_mul + result_sum
+            self.total += result_mul + result_sum
 
-        return total
+        return self.total
 
+    def remove_spaces_white(self, dimensions):
+        return [ value.strip() for value in dimensions ]

@@ -1,4 +1,4 @@
-from day2.gift import Gift
+from advent_of_code.day2.gift import Gift
 
 
 dimensions = open("input.txt").readlines()

@@ -19,6 +19,17 @@ class Test_gift(TestCase):
         self.assertEqual(
             Gift(['2x3x4']).calculation_of_feet_ribbon(), 34)
 
+    def test_empty_list(self):
+        self.assertEqual(
+            Gift([]).calculation_of_wrapping_paper(), 0)
+
+    def test_two_dimensions(self):
+        self.assertEqual(
+            Gift(['2x2']).calculation_of_wrapping_paper(), 0)
+
+    def test_negative_number(self):
+        self.assertEqual(
+            Gift(['-2x3x4']).calculation_of_wrapping_paper(), 0)
 
 if __name__ == '__main__':
     main()

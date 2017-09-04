@@ -6,7 +6,12 @@ class Gift:
         total = 0
 
         for dimension in self.dimensions:
-            length, width, height = list(map(int, dimension.split('x')))
+            try:
+                length, width, height = list(map(int, dimension.split('x')))
+                if length < 0 or width < 0 or height < 0:
+                    return False
+            except Exception:
+                return 0
 
             first = length * width
             second = width * height

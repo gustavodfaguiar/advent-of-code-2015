@@ -9,7 +9,7 @@ class Gift:
             try:
                 length, width, height = list(map(int, dimension.split('x')))
                 if length < 0 or width < 0 or height < 0:
-                    return False
+                    return 0
             except Exception:
                 return 0
 

@@ -24,12 +24,14 @@ class Test_gift(TestCase):
             Gift([]).calculation_of_wrapping_paper(), 0)
 
     def test_two_dimensions(self):
-        self.assertEqual(
-            Gift(['2x2']).calculation_of_wrapping_paper(), 0)
+        with self.assertRaises(Exception) as context:
+            Gift(['2x2']).calculation_of_wrapping_paper()
+
+        self.assertTrue('Missing parameters' in str(context.exception))
 
     def test_negative_number(self):
-        self.assertEqual(
-            Gift(['-2x3x4']).calculation_of_wrapping_paper(), 0)
+        self.assertRaises(
+            TypeError, Gift(['-2x3x4']).calculation_of_wrapping_paper(), ['-2x3x4'])
 
 if __name__ == '__main__':
     main()

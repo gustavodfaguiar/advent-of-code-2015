@@ -8,10 +8,12 @@ class Gift:
         for dimension in self.dimensions:
             try:
                 length, width, height = list(map(int, dimension.split('x')))
-                if length < 0 or width < 0 or height < 0:
-                    return 0
             except Exception:
-                return 0
+                raise Exception('Missing parameters')
+            else:
+                negative_number = [ True if value < 0 else False for value in [length, width, height] ]
+                if not negative_number:
+                    raise Exception('Negative value')
 
             first = length * width
             second = width * height

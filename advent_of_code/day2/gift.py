@@ -11,19 +11,22 @@ class Gift:
 			except Exception:
 				raise Exception('Missing parameters')
 
-			first = length * width
-			second = width * height
-			third = height * length
-
-			slack = min([first, second, third])
-			paper = sum([first, second, third]) * 2
-
-			total += paper + slack
+			total += self.amount_of_paper(length, width, height)
 
 		return total
 
 	def get_sizes_of(self, dimension):
 		return list(map(int, dimension.split('x')))
+
+	def amount_of_paper(self, length, width, height):
+		first = length * width
+		second = width * height
+		third = height * length
+
+		slack = min([first, second, third])
+		paper = sum([first, second, third]) * 2
+
+		return paper + slack
 
 	def calculation_of_feet_ribbon(self):
 		total = 0
